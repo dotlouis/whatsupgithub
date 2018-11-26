@@ -8,8 +8,6 @@ Last time, I included an interesting Pull Request, and I'm doing it again this w
 
 Please @me on twitter or add a suggestion here if you have nice repos or PR to share. I'd be more than happy to include them here.
 
-
-
 [![Artwork By Jono](https://s3.amazonaws.com/revue/items/images/003/827/574/original/twojs.gif?1542608164)](http://archive.jono.fyi/gallery/2018/01-infinity.html).  
 by [Jono](https://twitter.com/jonobr1)
 
@@ -45,11 +43,10 @@ The name Portals is tentative and the proposal is very early stages. Feedback is
 
 https://github.com/xtermjs/xterm.js/pull/1790
 
-I found this PR digging into the [VSCode](https://github.com/Microsoft/vscode) releases. The editor uses xterm.js for its terminal rendering. Right now, xterm draws on screen thanks to the <canvas> element. The relatively low level APIs allows some performance improvements over DOM rendering by making good use of the GPU. But Daniel Imms seems to think we can get even better performance using WebGL.  
+I found this PR digging into the [VSCode](https://github.com/Microsoft/vscode) releases. The editor uses xterm.js for its terminal rendering. Right now, xterm draws on screen thanks to the `<canvas>` element. The relatively low level APIs allows some performance improvements over DOM rendering by making good use of the GPU. But Daniel Imms seems to think we can get even better performance using WebGL.  
 Early benchmarks are showing already good improvements (as much as 900%) regarding the time to draw a frame on screen depending on the size of the viewport.  
 To give a scale, as web developers we usually work with the usual 16ms timeframe to draw something on screen to get a nice 60fps rendering.  
 The canvas takes an average of 14.81ms per frame while the WebGL version takes 5.4ms/frame on average.
 The PR is still at its experimental phase but we could easily see how this could improve rendering of text-based web apps that needs a high throughput.  
 WebGL is a cool technology and this is a good way to get started with it.
 Thank you Daniel !
-
